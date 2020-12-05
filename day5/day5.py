@@ -1,6 +1,4 @@
-import sys
 import numpy as np
-np.set_printoptions(threshold=sys.maxsize)
 import math
 
 cabin = np.zeros((128,8))
@@ -8,8 +6,6 @@ cabin = np.zeros((128,8))
 highest_value = 0
 
 f = open("day5/inputDay5.txt", "r")
-
-counter = 1
 
 for line in f:
 
@@ -49,15 +45,8 @@ for line in f:
     elif line[9] == 'R':
         col_num = int(upper_col)
 
-    #debug
-    print("Line: " + str(counter))
-    print("Row number: " + str(row_num))
-    print("Col number: " + str(col_num))
-    counter += 1
-
 
     cabin[row_num,col_num] = (row_num * 8) + col_num
-    print("ID: " + str(cabin[row_num,col_num]))
 
     if cabin[row_num,col_num] > highest_value:
         highest_value = cabin[row_num,col_num]
@@ -66,17 +55,15 @@ print("Highest value: " + str(highest_value))
 
 #part2
 
-print(cabin)
-
-my_ID = 0
+my_ID = 0.0
 for i in range(1, 128):
     for j in range(1, 7):
-        if cabin[i,j] == 0:
+        if cabin[i,j] == 0.0:
             temp_ID = i * 8 + j
-            if temp_ID - 1 == cabin[i-1,j-1] and temp_ID +1 == cabin[i+1,j+1] and cabin[i-1,j-1] != 0 and cabin[i+1,j+i] != 0:
+            if temp_ID - 1 == cabin[i,j-1] and temp_ID +1 == cabin[i,j+1] and cabin[i,j-1] != 0 and cabin[i,j+1] != 0:
                 my_ID = temp_ID
 
-print(my_ID)
+print("My ID: " + str(my_ID))
 
 
         
