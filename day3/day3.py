@@ -9,7 +9,7 @@ def split(word):
 
 def createArray():
 
-    f = open("inputDay3.txt", "r")
+    f = open("day3/inputDay3.txt", "r")
 
     array = []
     

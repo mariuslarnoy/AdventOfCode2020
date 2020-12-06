@@ -1,6 +1,6 @@
 import re
 
-f = open("inputDay2.txt", "r")
+f = open("day2/inputDay2.txt", "r")
 
 counter = 0
 for line in f: 

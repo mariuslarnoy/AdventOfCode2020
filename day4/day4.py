@@ -1,6 +1,6 @@
 from itertools import groupby 
 #preprocessing
-f = open("inputDay4.txt", "r")
+f = open("day4/inputDay4.txt", "r")
 
 lines = f.read().strip()
 lines = lines.split("\n")
