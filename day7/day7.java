@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.Iterator;
-import java.util.Set;
 
 public class day7 {
 
@@ -236,7 +235,5 @@ public class day7 {
 
         System.out.println("Part 2: " + searchTable_p2(table2, myBag));
     }
-
-
 
 }
