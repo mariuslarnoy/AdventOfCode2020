@@ -1,5 +1,5 @@
 
-def programLoop1(inputList):
+def program_loop1(inputList):
     accum = 0
     visited = []
 
@@ -33,10 +33,10 @@ def programLoop1(inputList):
 
     return (accum,visited,index)
 
-def programLoop2(inputList):
+def program_loop2(inputList):
     
     accum = 0
-    visited = programLoop1(inputList)[1]
+    visited = program_loop1(inputList)[1]
     index = 0
     indexToSwap = 0
     
@@ -54,12 +54,12 @@ def programLoop2(inputList):
             if currentInstruction == "jmp":
                 mutable_inputList[visited[i]] = "nop " + currentNumber
                 indexToSwap = visited[i]
-                accum, index = programLoop1(mutable_inputList)[0], programLoop1(mutable_inputList)[2]
+                accum, index = program_loop1(mutable_inputList)[0], program_loop1(mutable_inputList)[2]
 
             elif currentInstruction == "nop":
                 mutable_inputList[visited[i]] = "jmp " + currentNumber
                 indexToSwap = visited[i]
-                accum, index = programLoop1(mutable_inputList)[0], programLoop1(mutable_inputList)[2]
+                accum, index = program_loop1(mutable_inputList)[0], program_loop1(mutable_inputList)[2]
     
     return (accum, indexToSwap)
 
@@ -74,7 +74,7 @@ def part1():
         cleaned_line = line.strip()
         inputList.append(cleaned_line)
 
-    print("Part 1: Accum = " + str(programLoop1(inputList)[0]))
+    print("Part 1: Accum = " + str(program_loop1(inputList)[0]))
 
 
 def part2():
@@ -87,7 +87,7 @@ def part2():
         cleaned_line = line.strip()
         inputList.append(cleaned_line)
 
-    accum, swapIndex = programLoop2(inputList)[0], programLoop2(inputList)[1]
+    accum, swapIndex = program_loop2(inputList)[0], program_loop2(inputList)[1]
     
     print("Part 2: Accum = " + str(accum))
     print("Index to swap: " + str(swapIndex))
